@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-10-20T17:42:08.633101+00:00",
+  "source_subset": "FD004",
+  "candidate": {
+    "name": "fd004_hgb_cap100_condition_normalized",
+    "rul_cap": 100,
+    "condition_normalized": true
+  },
+  "validation_protocol": "3-fold engine grouped, horizons 10/25/50/75/100/125",
+  "software_versions": {
+    "python": "3.12.4",
+    "numpy": "1.26.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "condition_counts_source": {
+    "0": 15395,
+    "1": 9238,
+    "2": 9139,
+    "3": 9091,
+    "4": 9224,
+    "5": 9162
+  }
+}

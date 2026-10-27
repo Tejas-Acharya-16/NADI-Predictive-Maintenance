@@ -1,0 +1,20 @@
+Completed global validation fold 1/3
+Completed global validation fold 2/3
+Completed global validation fold 3/3
+
+Validation selection
+                             candidate      rmse       mae       r2  phm08_mean  selected_by_global_validation
+global_hgb_cap100_condition_normalized 14.100932  9.729814 0.877900    2.531983                           True
+global_hgb_cap125_condition_normalized 11.800077  8.178254 0.914495    2.560799                          False
+  global_hgb_cap125_raw_sensor_control 17.169010 12.525577 0.818987    7.545723                          False
+
+Locked official-test results
+subset      rmse       mae       r2  phm08_mean  bias_predicted_minus_actual
+ FD001 16.292330 11.608376 0.846288    3.163922                    -7.688391
+ FD002 31.128270 19.183103 0.664967   61.477150                   -14.766934
+ FD003 17.273411 11.982063 0.825881    3.785403                    -6.685651
+ FD004 33.391156 21.784634 0.624949   62.573773                   -17.451075
+
+Pooled
+ samples      rmse       mae  median_absolute_error       r2  mape_percent  smape_percent  bias_predicted_minus_actual  overprediction_count  underprediction_count  overprediction_fraction  absolute_error_p90  absolute_error_max   phm08_sum  phm08_mean  nasa_score  nasa_score_mean
+     707 28.737127 18.005738               8.443864 0.683397     18.958562      20.544636                   -13.564224                   251                    456                 0.355021           53.477761           98.014923 32135.81016   45.453763 32135.81016        45.453763

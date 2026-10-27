@@ -1,0 +1,32 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Large binary wheel files (>100MB, GitHub rejects these)
+*.whl
+
+# Large model binary files (some exceed 100MB GitHub limit)
+*.joblib
+*.pt
+*.pkl
+*.h5
+*.onnx
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Crawl cache
+.firecrawl/
+.qodo/

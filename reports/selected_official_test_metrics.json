@@ -1,0 +1,19 @@
+{
+  "absolute_error_max": 38.845269399500026,
+  "absolute_error_p90": 24.13500847255493,
+  "bias_predicted_minus_actual": 0.1567656212615186,
+  "mae": 9.799203028892942,
+  "mape_percent": 13.82156890161438,
+  "median_absolute_error": 5.704014422132033,
+  "nasa_score": 285.2221044575083,
+  "nasa_score_mean": 2.852221044575083,
+  "overprediction_count": 50,
+  "overprediction_fraction": 0.5,
+  "phm08_mean": 2.852221044575083,
+  "phm08_sum": 285.2221044575083,
+  "r2": 0.8939570553617793,
+  "rmse": 13.532270223071453,
+  "samples": 100,
+  "smape_percent": 13.679450325275939,
+  "underprediction_count": 50
+}

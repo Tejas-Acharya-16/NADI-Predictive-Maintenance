@@ -1,0 +1,47 @@
+{
+  "full_training_artifact": "C:\\Users\\devan\\Downloads\\casestudy1sol\\artifacts\\FD001\\selected_hgb_full_training",
+  "official_test_loaded_during_study": false,
+  "repeat_metrics_file": "selected_repeat_summary.csv",
+  "selected_experiment": {
+    "initial_differences": false,
+    "low_variance_threshold": null,
+    "model_params": null,
+    "name": "cap125_w10_30",
+    "rul_cap": 125,
+    "windows": [
+      10,
+      30
+    ]
+  },
+  "selection_metrics": {
+    "absolute_error_max": 37.16134582132051,
+    "absolute_error_p90": 22.893494466143384,
+    "bias_predicted_minus_actual": 2.4382806691701635,
+    "development_engines": 80,
+    "experiment": "cap125_w10_30",
+    "feature_count": 215,
+    "feature_variant": "causal__w10_30",
+    "kept_sensor_count": 21,
+    "mae": 8.608696076439578,
+    "mape_percent": 14.474693358495749,
+    "median_absolute_error": 4.768105182673224,
+    "model_params": "{\"early_stopping\": false, \"l2_regularization\": 1.0, \"learning_rate\": 0.08, \"max_iter\": 150, \"max_leaf_nodes\": 31, \"min_samples_leaf\": 20, \"random_state\": 42}",
+    "nasa_score": 169.89698043352905,
+    "nasa_score_mean": 2.8316163405588175,
+    "overprediction_count": 40,
+    "overprediction_fraction": 0.6666666666666666,
+    "phm08_mean": 2.8316163405588175,
+    "phm08_sum": 169.89698043352905,
+    "protocol": "fixed engine split; validation prefixes at 50%, 70%, and 90% of each run-to-failure trajectory",
+    "r2": 0.8773926676651672,
+    "rmse": 12.773233120989048,
+    "rul_cap": 125.0,
+    "samples": 60,
+    "seed": 42,
+    "smape_percent": 13.726563696157873,
+    "underprediction_count": 20,
+    "validation_cases": 60,
+    "validation_engines": 20
+  },
+  "selection_seed": 42
+}

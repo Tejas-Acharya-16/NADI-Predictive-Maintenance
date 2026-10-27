@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-10-20T18:51:08.441876+00:00",
+  "training_subsets": [
+    "FD001",
+    "FD002",
+    "FD003",
+    "FD004"
+  ],
+  "training_rows": 160359,
+  "training_engines": 709,
+  "selected_candidate": {
+    "name": "global_hgb_cap100_condition_normalized",
+    "rul_cap": 100,
+    "condition_normalized": true
+  },
+  "selection_protocol": "3-fold stratified engine-grouped validation across FD001-FD004; fixed horizons 10/25/50/75/100/125; rank by PHM08 mean then RMSE",
+  "official_test_stage": "all four official test files and labels were read after model selection",
+  "software_versions": {
+    "python": "3.12.4",
+    "numpy": "1.26.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}

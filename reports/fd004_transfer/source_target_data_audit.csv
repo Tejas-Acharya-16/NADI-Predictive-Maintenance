@@ -1,0 +1,5 @@
+subset,train_rows,train_engines,test_rows,test_engines,test_rul_min,test_rul_max,quality_checks
+FD001,20631,100,13096,100,7,145,passed
+FD002,53759,260,33991,259,6,194,passed
+FD003,24720,100,16596,100,6,145,passed
+FD004,61249,249,41214,248,6,195,passed

@@ -1,0 +1,862 @@
+[
+  {
+    "work_order_key": "engine_3:L1",
+    "asset_id": "engine_003",
+    "timestamp": "cycle_129",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 54.44751234525738,
+    "anomaly_score": 0.6103450059890747,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_3:L3",
+    "asset_id": "engine_003",
+    "timestamp": "cycle_156",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 18.6468075552401,
+    "anomaly_score": 2.1731984615325928,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 30,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.6; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_6:L1",
+    "asset_id": "engine_006",
+    "timestamp": "cycle_140",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 49.181890333319416,
+    "anomaly_score": 0.31282421946525574,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=49.2",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_6:L2",
+    "asset_id": "engine_006",
+    "timestamp": "cycle_167",
+    "severity": "L2",
+    "recommended_action": "planned inspection",
+    "predicted_rul": 18.402422889546777,
+    "anomaly_score": 0.3827679455280304,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.4",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_13:L1",
+    "asset_id": "engine_013",
+    "timestamp": "cycle_114",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 47.799498338015844,
+    "anomaly_score": 0.6480614542961121,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 1,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=47.8",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_13:L3",
+    "asset_id": "engine_013",
+    "timestamp": "cycle_143",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 18.342692113499325,
+    "anomaly_score": 1.7242152690887451,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 30,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.3; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_17:L1",
+    "asset_id": "engine_017",
+    "timestamp": "cycle_177",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 98.58899116169,
+    "anomaly_score": 0.5981595516204834,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_17:L3",
+    "asset_id": "engine_017",
+    "timestamp": "cycle_256",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 19.80100923715883,
+    "anomaly_score": 3.8402342796325684,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 73,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.8; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_18:L1",
+    "asset_id": "engine_018",
+    "timestamp": "cycle_130",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 63.921326146792474,
+    "anomaly_score": 0.6369380354881287,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_18:L3",
+    "asset_id": "engine_018",
+    "timestamp": "cycle_174",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 19.799478441102384,
+    "anomaly_score": 3.3296124935150146,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 47,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.8; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_25:L1",
+    "asset_id": "engine_025",
+    "timestamp": "cycle_174",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 55.52239428143975,
+    "anomaly_score": 0.6250869035720825,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_25:L3",
+    "asset_id": "engine_025",
+    "timestamp": "cycle_207",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 18.924279842495753,
+    "anomaly_score": 1.8926067352294922,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 36,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.9; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_38:L1",
+    "asset_id": "engine_038",
+    "timestamp": "cycle_143",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 45.52159328520845,
+    "anomaly_score": 0.6624566912651062,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=45.5",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_38:L3",
+    "asset_id": "engine_038",
+    "timestamp": "cycle_172",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 19.019038274864826,
+    "anomaly_score": 1.894124150276184,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 32,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.0; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_39:L1",
+    "asset_id": "engine_039",
+    "timestamp": "cycle_83",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 48.31937378435983,
+    "anomaly_score": 0.3266223669052124,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=48.3",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_39:L2",
+    "asset_id": "engine_039",
+    "timestamp": "cycle_111",
+    "severity": "L2",
+    "recommended_action": "planned inspection",
+    "predicted_rul": 19.868990415836592,
+    "anomaly_score": 0.43317434191703796,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.9",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_39:L3",
+    "asset_id": "engine_039",
+    "timestamp": "cycle_123",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 4.345396872899002,
+    "anomaly_score": 0.5732722878456116,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=4.3; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_40:L1",
+    "asset_id": "engine_040",
+    "timestamp": "cycle_118",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 75.45417076828376,
+    "anomaly_score": 0.6154024600982666,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_40:L3",
+    "asset_id": "engine_040",
+    "timestamp": "cycle_169",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 19.71287306848498,
+    "anomaly_score": 2.1304688453674316,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 54,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.7; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_44:L1",
+    "asset_id": "engine_044",
+    "timestamp": "cycle_146",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 49.295886786235485,
+    "anomaly_score": 0.5411077737808228,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=49.3",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_44:L3",
+    "asset_id": "engine_044",
+    "timestamp": "cycle_171",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 19.554136882579535,
+    "anomaly_score": 0.9461914896965027,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 20,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.6; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_47:L1",
+    "asset_id": "engine_047",
+    "timestamp": "cycle_164",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 55.79836160685912,
+    "anomaly_score": 0.6141979694366455,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_47:L3",
+    "asset_id": "engine_047",
+    "timestamp": "cycle_194",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 17.841321335632664,
+    "anomaly_score": 1.313037395477295,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 33,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=17.8; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_50:L1",
+    "asset_id": "engine_050",
+    "timestamp": "cycle_137",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 64.80070811480795,
+    "anomaly_score": 0.6321954727172852,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_50:L3",
+    "asset_id": "engine_050",
+    "timestamp": "cycle_180",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 18.543477736715932,
+    "anomaly_score": 1.927976131439209,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 46,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.5; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_55:L1",
+    "asset_id": "engine_055",
+    "timestamp": "cycle_139",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 52.521251304629416,
+    "anomaly_score": 0.6531176567077637,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_55:L3",
+    "asset_id": "engine_055",
+    "timestamp": "cycle_175",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 19.674370531221324,
+    "anomaly_score": 2.9775633811950684,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 39,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.7; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_56:L1",
+    "asset_id": "engine_056",
+    "timestamp": "cycle_175",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 98.75329128274444,
+    "anomaly_score": 0.5804120898246765,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_56:L3",
+    "asset_id": "engine_056",
+    "timestamp": "cycle_257",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 18.94569363455377,
+    "anomaly_score": 3.330335855484009,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 69,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.9; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_64:L1",
+    "asset_id": "engine_064",
+    "timestamp": "cycle_207",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 78.8085071150109,
+    "anomaly_score": 0.5932042002677917,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_64:L3",
+    "asset_id": "engine_064",
+    "timestamp": "cycle_266",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 17.88402731315491,
+    "anomaly_score": 2.0014994144439697,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 62,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=17.9; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_65:L1",
+    "asset_id": "engine_065",
+    "timestamp": "cycle_103",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 46.5629296960399,
+    "anomaly_score": 0.3451707661151886,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=46.6",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_65:L2",
+    "asset_id": "engine_065",
+    "timestamp": "cycle_135",
+    "severity": "L2",
+    "recommended_action": "planned inspection",
+    "predicted_rul": 18.738330488855752,
+    "anomaly_score": 0.48956796526908875,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.7",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_65:L3",
+    "asset_id": "engine_065",
+    "timestamp": "cycle_142",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 11.378219884748335,
+    "anomaly_score": 0.5870264172554016,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=11.4; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_70:L1",
+    "asset_id": "engine_070",
+    "timestamp": "cycle_93",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 48.22981470172428,
+    "anomaly_score": 0.4653010368347168,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=48.2",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_70:L3",
+    "asset_id": "engine_070",
+    "timestamp": "cycle_116",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 19.530763266152693,
+    "anomaly_score": 0.9477012753486633,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 17,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.5; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_76:L1",
+    "asset_id": "engine_076",
+    "timestamp": "cycle_156",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 47.894865140193616,
+    "anomaly_score": 0.41899538040161133,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=47.9",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_76:L2",
+    "asset_id": "engine_076",
+    "timestamp": "cycle_189",
+    "severity": "L2",
+    "recommended_action": "planned inspection",
+    "predicted_rul": 19.495851012154095,
+    "anomaly_score": 0.5585950016975403,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 0,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=19.5",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_76:L3",
+    "asset_id": "engine_076",
+    "timestamp": "cycle_194",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 14.02169936592176,
+    "anomaly_score": 0.5828896760940552,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=14.0; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_82:L1",
+    "asset_id": "engine_082",
+    "timestamp": "cycle_128",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 87.98383574913021,
+    "anomaly_score": 0.6247064471244812,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_82:L3",
+    "asset_id": "engine_082",
+    "timestamp": "cycle_195",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 17.744502704551987,
+    "anomaly_score": 3.347139835357666,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 70,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=17.7; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_95:L1",
+    "asset_id": "engine_095",
+    "timestamp": "cycle_199",
+    "severity": "L1",
+    "recommended_action": "inspection recommendation",
+    "predicted_rul": 83.12569405487979,
+    "anomaly_score": 0.6044198274612427,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 3,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  },
+  {
+    "work_order_key": "engine_95:L3",
+    "asset_id": "engine_095",
+    "timestamp": "cycle_266",
+    "severity": "L3",
+    "recommended_action": "high-priority inspection",
+    "predicted_rul": 18.638535529317803,
+    "anomaly_score": 2.1425764560699463,
+    "anomaly_threshold": 0.5716889476776122,
+    "anomaly_persistence": 70,
+    "data_quality": "good",
+    "model_version": "selected_hgb_full_training",
+    "trigger_reason": "predicted_rul=18.6; persistent anomaly",
+    "triage_config": {
+      "warning_rul_cycles": 50.0,
+      "critical_rul_cycles": 20.0,
+      "anomaly_persistence_cycles": 3,
+      "low_confidence_interval_width": 50.0
+    }
+  }
+]

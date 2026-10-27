@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\Users\devan\Downloads\casestudy1sol\run_fd001_first_champion.py", line 28, in <module>
+    main()
+  File "C:\Users\devan\Downloads\casestudy1sol\run_fd001_first_champion.py", line 23, in main
+    result = audit.run(report_dir=REPORTS, artifact_dir=ARTIFACTS)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\devan\Downloads\casestudy1sol\run_fd001_grouped_audit.py", line 345, in run
+    baseline = summary.loc[summary["candidate"] == "hgb_control_cap125_w10_30"].iloc[0]
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\devan\Downloads\casestudy1sol\.venv\Lib\site-packages\pandas\core\indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\devan\Downloads\casestudy1sol\.venv\Lib\site-packages\pandas\core\indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\devan\Downloads\casestudy1sol\.venv\Lib\site-packages\pandas\core\indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds

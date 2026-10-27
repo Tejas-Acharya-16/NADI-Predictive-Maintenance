@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-10-20T19:25:01.411501+00:00",
+  "candidate": {
+    "name": "hgb_cap200_normalized",
+    "model_family": "hist_gradient_boosting",
+    "rul_cap": 200,
+    "condition_mode": "normalized_with_settings",
+    "windows": [
+      10,
+      30
+    ],
+    "initial_differences": false,
+    "drop_settings": false,
+    "model_params": null
+  },
+  "seed": 20261021,
+  "selection_rule": "lowest macro subset PHM08 mean, then pooled RMSE",
+  "full_fit_seconds": 39.71933569997782,
+  "official_test_status": "historically inspected benchmark audit only",
+  "versions": {
+    "python": "3.12.4",
+    "numpy": "1.26.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}

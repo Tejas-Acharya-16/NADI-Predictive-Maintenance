@@ -1,0 +1,22 @@
+{
+  "required_files": [
+    "audit_data_integrity.csv",
+    "audit_raw_and_capped_metrics.csv",
+    "specialist_validation_comparison.csv",
+    "specialist_validation_predictions.csv",
+    "specialist_official_metrics.csv",
+    "transfer_validation_metrics.csv",
+    "compact_tcn_validation_metrics.csv",
+    "observable_router_validation_metrics.csv",
+    "competition_work_orders.csv",
+    "competition_system_metadata.json",
+    "final_model_comparison.csv",
+    "critical_0_to_30_metrics.csv",
+    "FINAL_DOMAIN_AWARE_REPORT.md",
+    "OPP_SUMMARY.md",
+    "Domain_Aware_CMAPSS_Final_Report.pdf",
+    "unit_test_results.txt"
+  ],
+  "missing": [],
+  "artifact_check_passed": true
+}

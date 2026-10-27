@@ -1,0 +1,2 @@
+backend,float_state_dict_bytes,float_latency_ms_per_batch,int8_state_dict_bytes,int8_latency_ms_per_batch,size_reduction_percent,latency_change_percent
+PyTorch CPU,6357,0.019497000030241907,5759,0.31712799973320216,9.406952965235174,1526.5476701097766

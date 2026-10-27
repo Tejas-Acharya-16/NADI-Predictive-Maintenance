@@ -1,0 +1,22 @@
+{
+  "samples": 100,
+  "rmse": 16.75502729909039,
+  "mae": 11.95861119422467,
+  "median_absolute_error": 7.063278104533232,
+  "r2": 0.8374336198904282,
+  "mape_percent": 14.626985303068164,
+  "smape_percent": 15.343440902991375,
+  "bias_predicted_minus_actual": -7.329709807876473,
+  "overprediction_count": 33,
+  "underprediction_count": 67,
+  "overprediction_fraction": 0.33,
+  "absolute_error_p90": 32.14286360917982,
+  "absolute_error_max": 44.3609153954216,
+  "phm08_sum": 339.33152150482357,
+  "phm08_mean": 3.3933152150482355,
+  "nasa_score": 339.33152150482357,
+  "nasa_score_mean": 3.3933152150482355,
+  "candidate": "hgb_cap100_w10_30",
+  "benchmark_status": "historical official test previously inspected; this comparison did not influence selection",
+  "evaluated_utc": "2026-10-20T17:18:17.108326+00:00"
+}

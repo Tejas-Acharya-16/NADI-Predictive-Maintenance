@@ -1,0 +1,9 @@
+{
+  "development_early_life_windows": 1818,
+  "interpretation": "Unsupervised health signal only; C-MAPSS has no cycle-level anomaly labels.",
+  "spearman_reconstruction_error_vs_rul": -0.5163175619035717,
+  "validation_reconstruction_mse_mean": 0.41242703795433044,
+  "validation_reconstruction_mse_median": 0.3520824611186981,
+  "validation_reconstruction_mse_std": 0.2041366547346115,
+  "validation_scored_windows": 3713
+}

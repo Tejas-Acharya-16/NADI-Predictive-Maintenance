@@ -1,0 +1,170 @@
+MASTER IMPLEMENTATION PROMPT — NASA C-MAPSS FD001 REMAINING USEFUL LIFE (RUL)
+
+ROLE
+Act as a senior machine-learning engineer and research assistant. Work inside my existing project/repository. Your task is to audit and improve my current NASA C-MAPSS FD001 Remaining Useful Life (RUL) predictive-maintenance pipeline. Do not blindly rewrite the project, claim unverified performance, or optimize against the official test set.
+
+PROJECT CONTEXT
+The competition brief requires a pipeline that ingests sensor data, cleans it, builds rolling-window features, predicts Remaining Useful Life (RUL), detects abnormal behavior, tracks experiments/model versions, offers a monitoring view, and uses a plain rule-based (non-LLM) triage agent to create a maintenance work order. The prescribed dataset is NASA C-MAPSS. Begin with FD001 because it is the simplest subset (100 run-to-failure training engines, 100 truncated test engines, one operating condition and one fault mode). Do not claim this simulated turbofan dataset is the same as real industrial motor-vibration data.
+
+CURRENT REPORTED RESULTS (TREAT AS PROVISIONAL UNTIL REPRODUCED)
+Model | RMSE | MAE | R² | reported “NASA mean”
+HistGradientBoosting | 24.050 | 16.885 | 0.665 | 336.047
+Random Forest | 24.142 | 16.357 | 0.662 | 448.807
+TinyML RUL | 24.806 | 17.755 | 0.644 | 76.179
+Hybrid TinyML + Autoencoder | 27.316 | 19.095 | 0.568 | 160.383
+Ridge | 27.949 | 23.105 | 0.548 | 54.346
+AFICv Random Forest | 31.846 | 21.785 | 0.413 | 2522.732
+Mean baseline | 52.796 | 40.996 | -0.614 | 2768.785
+
+HistGradientBoosting currently has the lowest reported RMSE and highest R²; Random Forest has the lowest reported MAE. Ridge has the lowest displayed NASA value despite weaker ordinary regression metrics, so check rather than assume a bug: an asymmetric score can rank models differently. The table calls the last column “NASA mean,” but do not assume whether it is a per-engine mean, a total sum, or a differently implemented quantity. Trace its implementation and clarify it.
+
+PRIMARY PAPER TO IMPLEMENT NEXT
+Ensarioğlu, Kıymet; İnkaya, Tülin; Emel, Erdal (2023), “Remaining Useful Life Estimation of Turbofan Engines with Deep Learning Using Change-Point Detection Based Labeling and Feature Engineering,” Applied Sciences 13(21), 11893. DOI: https://doi.org/10.3390/app132111893
+Full text: https://www.mdpi.com/2076-3417/13/21/11893
+Relevance: exact C-MAPSS FD001 benchmark; combines change-point-detection-based piecewise RUL labeling, sensor-difference feature construction, and a 1D-CNN-LSTM. The paper reports RMSE 16.1 and PHM08 score 437.2 for its proposed model with the difference feature. This is a reference point, NOT a guarantee or directly comparable result unless data processing, validation, target construction, and score aggregation match.
+
+SECONDARY REFERENCE
+“Deep-Learning Based Prognosis Approach for Remaining Useful Life Prediction of Turbofan Engine” (2021), Symmetry 13(10), 1861. https://www.mdpi.com/2073-8994/13/10/1861
+It evaluates an attention-based deep CNN and reports FD001 RMSE 11.81 in its own protocol. Use it as a later architecture to investigate only after the evaluation pipeline and a simpler temporal baseline are correct; do not promise to beat this number.
+
+REVIEW / FOUNDATIONAL DATASET REFERENCES
+Ramasso & Saxena (2014), “Review and Analysis of Algorithmic Approaches Developed for Prognostics on CMAPSS Dataset,” NASA Technical Reports Server: https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20150007677.pdf
+Official NASA data description: https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data
+Dataset background: Saxena, Goebel, Simon & Eklund (2008), “Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation,” PHM08, https://doi.org/10.1109/PHM.2008.4711414
+Latest optional comparison (not the first implementation): Kumar et al. (2026), “Temporal-sequential modeling for remaining useful life estimation of turbofan engine,” Scientific Reports: https://www.nature.com/articles/s41598-026-63783-7. It describes a CNN-LSTM with sliding windows and early RUL capping, and reports FD001 RMSE 12.79 under its own evaluation setup.
+
+TOP-LEVEL RULES
+1. First inspect my code, data schema, preprocessing, target generation, splits, saved predictions, and metric functions. Explain what the current pipeline actually does before editing it.
+2. Preserve the current working code and create a branch, backup, or clearly named experiment files before large changes.
+3. Implement in small, reproducible steps. Every experiment must log its configuration, random seed, dataset subset, feature set, target-labeling scheme, validation protocol, and metrics.
+4. Never split individual rows/windows randomly. Split/group by engine ID so the same engine cannot leak into training and validation.
+5. Use only causal features available at the prediction time. Never use centered rolling windows or future cycles. Do not use total engine lifetime, final cycle number, “life fraction,” or any feature that would be unknown for an incomplete test engine as a predictor.
+6. Fit normalization, imputation, feature selection, dimensionality reduction, and any learned preprocessing on training engines only; apply the fitted transform to validation/test data.
+7. Keep the official test set untouched until model choices and thresholds are fixed. Do not tune repeatedly based on official test metrics.
+8. Do not claim a model is state of the art or better than a paper unless protocols are comparable and results are reproduced.
+9. If a data file or code path is missing, report the blocker and expected schema. Do not fabricate results.
+10. Use no LLM for the triage agent. Use plain Python rules.
+
+PHASE 1 — REPOSITORY AND DATA AUDIT
+- List repository files and identify training/evaluation entry points, model classes, metric code, dataset paths, and how the current result table was generated.
+- Confirm whether data files are `train_FD001.txt`, `test_FD001.txt`, and `RUL_FD001.txt` (or state the actual filenames).
+- Verify FD001 columns: engine/unit ID, cycle, 3 operating settings, and 21 sensor channels (26 columns total in the raw whitespace-delimited file).
+- Validate row counts, unique engine counts, cycles ordered within each engine, duplicate rows, missing/infinite values, sensor distributions, near-constant sensors, and engine life lengths.
+- Reconstruct and save the current metric results from predictions. Do not trust a screenshot alone.
+- Write `reports/data_audit.md` with findings, decisions, caveats, and reproducibility details.
+
+PHASE 2 — METRIC AND TARGET AUDIT (DO THIS BEFORE MODEL TUNING)
+- For each training engine and cycle t, compute uncapped RUL = final observed training cycle for that engine minus t.
+- Implement a configurable piecewise-linear training target: `RUL_cap = min(uncapped_RUL, 125)`. Keep the uncapped target as a separate experiment; do not mix target conventions in one row of results.
+- For official test evaluation, take one prediction from the final observed timestep of each test engine and compare against the corresponding entry in `RUL_FD001.txt`. Do not silently cap or modify the supplied test truth. If reproducing a cited paper uses a different convention, implement it as a separately named protocol and clearly document it.
+- Verify one-to-one engine-order alignment between final test rows and the RUL truth vector.
+- Implement the PHM08/NASA asymmetric score with `d = prediction - true_RUL`:
+  * if d < 0: score_i = exp(-d / 13) - 1 (predicted less RUL than true; conservative/early warning)
+  * if d >= 0: score_i = exp(d / 10) - 1 (predicted more RUL than true; potentially late warning)
+  * compute both `NASA_PHM08_sum = sum(score_i)` and `NASA_PHM08_mean = mean(score_i)` and name them unambiguously.
+- Check whether the existing “NASA mean” is actually sum, mean, differently signed, computed after clipping, computed per row instead of one endpoint per engine, or using mismatched arrays. Add unit tests against manually computed examples: d=-13 gives exp(1)-1; d=10 gives exp(1)-1; d=0 gives 0.
+- Report RMSE, MAE, R², PHM08 sum and PHM08 mean using the same prediction/target arrays. Lower RMSE, MAE, and PHM08 score is better; higher R² is better. Since the score is asymmetric, a different model ranking is possible and is not automatically a bug.
+
+PHASE 3 — LEAKAGE-FREE VALIDATION
+- Preserve official test data as final holdout.
+- Split training engines into train and validation engines by ID (e.g., an 80/20 grouped split, fixed seed; also use GroupKFold if practical).
+- Because official test engines are truncated before failure, create test-like validation observations: for each held-out validation engine, expose only a prefix ending at a reproducibly sampled cutoff before failure and predict its remaining cycles. Never supply the hidden suffix to the model as features. The validation target can be calculated from the complete run-to-failure trajectory only for evaluation.
+- Use one clearly specified end-of-prefix prediction per validation case, or report a well-defined per-engine summary if multiple cutoffs are used. Keep every engine wholly assigned to train or validation.
+- Select hyperparameters and thresholds on validation only. Evaluate official test once at the end.
+- Save split engine IDs and cutoff positions to enable exact reproduction.
+
+PHASE 4 — REPRODUCE BASELINES
+- Rebuild and compare current Mean baseline, Ridge, Random Forest, HistGradientBoosting, TinyML RUL, Hybrid TinyML + Autoencoder, and AFICv Random Forest where code/assets are available. If a model name cannot be identified from the repo, flag it rather than inventing its implementation.
+- Ensure every model receives the same split and truth convention where appropriate.
+- Include at least one simple baseline and the current strongest model before any new architecture.
+- Save a baseline table and prediction file per model (one row per engine with engine ID, y_true, y_pred, residual, absolute error, PHM08 contribution).
+
+PHASE 5 — IMPROVE THE CURRENT TREE MODELS FIRST
+- Tune HistGradientBoosting and Random Forest first; include XGBoost or LightGBM if dependency/environment permits. Do not add multiple new libraries without reason.
+- Use randomized search or a small, documented parameter grid, with grouped/test-like validation only.
+- For HistGradientBoosting, consider learning_rate, max_iter, max_leaf_nodes/max_depth, min_samples_leaf, l2_regularization, and early stopping (as supported by the installed version).
+- For Random Forest, consider n_estimators, max_depth, max_features, min_samples_leaf, min_samples_split, and bootstrap.
+- Use consistent feature pipelines and training-only scaling where needed. Tree models generally do not need standardization, but all imputers and feature selection must still be train-fitted.
+
+PHASE 6 — FEATURE ENGINEERING ABLATIONS
+Implement and compare one change at a time:
+A. Current features (control).
+B. Remove near-constant sensors based only on training data and document the threshold/rationale.
+C. Causal rolling mean, standard deviation, and simple trend/slope features at windows such as 10, 20, 30, and 50 cycles (evaluate window sizes; do not assume one is best).
+D. First-difference / lag features for sensor dynamics.
+E. Difference-to-initial-reading features (`current_sensor - first_observed_sensor_for_this_engine`) inspired by the 2023 paper; first observation is available at inference time.
+F. Optional operating-setting-aware preprocessing only if supported by evidence. FD001 has one operating condition; do not add complex condition clustering unless the data justify it.
+G. Compare uncapped and capped-at-125 training labels as separate experiments.
+- All rolling features must use only past/current points and reset at each engine boundary; never leak information between engines.
+- Create an ablation table with one change per row. Report if it improves validation mean and variability, not just one lucky split.
+
+PHASE 7 — IMPLEMENT THE PRIMARY PAPER (STAGED REPRODUCTION)
+Use the Ensarioğlu, İnkaya & Emel (2023) paper as the primary model-development reference. Do not attempt to implement every complex element simultaneously.
+Stage 7.1: Build a simple 1D-CNN and a simple LSTM/GRU sequence baseline on causal sliding windows; use a piecewise RUL cap of 125 as one clearly defined variant.
+Stage 7.2: Build a 1D-CNN-LSTM hybrid: CNN learns local cross-sensor/window patterns; LSTM learns temporal dependence; dense output predicts scalar RUL.
+Stage 7.3: Add the sensor-difference-to-initial-reading features.
+Stage 7.4: Investigate the paper's change-point-based piecewise RUL labeling as a separate experiment. Do not use true test-engine future trajectories to find change points at inference. Learn any thresholds or transformations from training data only. Document how engine-specific breakpoints are produced and any assumptions required.
+Stage 7.5: Run ablations: CNN vs LSTM/GRU vs CNN-LSTM; base sensors vs difference features; fixed cap vs change-point label; window sizes (e.g., 20/30/50); optional attention only after simple variants run.
+- Use early stopping based on validation; save best checkpoint; record seeds and package versions.
+- If compute/time is limited, prioritize a stable CNN-LSTM plus feature ablations over many architectures.
+
+PHASE 8 — METRICS AND ERROR ANALYSIS
+Primary selection metrics:
+1. PHM08/NASA asymmetric score (both total sum, conventional aggregate, and per-engine mean for clarity; lower is better).
+2. RMSE in cycles (lower is better).
+Secondary metrics:
+3. MAE in cycles (lower is better).
+4. R² (higher is better; may be negative and is not an error by itself).
+5. Mean signed error/bias, fraction of engines with RUL overestimated (`y_pred > y_true`), median absolute error, 90th percentile absolute error, and maximum absolute error.
+6. Plot actual-vs-predicted RUL, residual distribution, per-engine error bars, and PHM08 contribution by engine; identify worst 10 engines and explain their errors.
+- Use identical held-out validation cases for all model comparisons. For stochastic models repeat seeds when feasible and report mean ± standard deviation.
+- Prefer a model that improves the operationally relevant NASA score without unacceptable RMSE/MAE degradation. State the trade-off transparently; do not collapse every metric into an arbitrary weighted total.
+
+PHASE 9 — ANOMALY DETECTION AND RULE-BASED TRIAGE (AFTER RUL PIPELINE IS TRUSTWORTHY)
+- Treat anomaly detection as a separate task from RUL regression. C-MAPSS does not provide a ground-truth anomaly label for every cycle; do not report classification accuracy without valid labels.
+- Start with an optional Isolation Forest or reconstruction-error baseline using training-only/early-life reference data. Document exactly what is considered “normal” and how thresholds are chosen on validation data.
+- Build plain Python decision rules combining estimated RUL, anomaly score, and data-quality/model-confidence checks. Use configurable example thresholds (e.g., RUL <= 20 cycles = critical; <= 50 = warning; otherwise monitor) only as demo placeholders, not safety-certified thresholds. Include hysteresis/debounce to prevent alert oscillation if appropriate.
+- Generate a structured mock work order containing engine ID, predicted RUL, severity, trigger reason, timestamp, model version and recommended inspection category. Human approval/override must be available for real operations; explain that this is a simulated benchmark demo, not a validated aircraft maintenance system.
+
+PHASE 10 — MLOPS AND DELIVERABLES
+- Track each experiment/model version with MLflow if possible; log parameters, metrics, artifact paths and code/data config (without bundling proprietary data unexpectedly).
+- Provide a reproducible command or script to run preprocessing, training, evaluation and report generation.
+- Build a simple Streamlit dashboard: fleet table, predicted RUL, severity, anomaly flag, metric comparison, prediction/error plots, experiment/model version. Dashboard must use saved reproducible predictions/results, not fabricated random values.
+- Add a demo retraining run and state exactly what triggers it (new labeled data, detected drift, or a manual demo command). Do not claim automatic learning from the official test labels.
+
+REQUIRED PROJECT OUTPUTS
+1. `reports/data_audit.md` — schema, quality checks, leakage risks, exact row/engine counts.
+2. `reports/metric_audit.md` — existing metric code, PHM08 formula, sum-vs-mean clarification, unit tests, and corrected baseline table.
+3. `reports/experiment_plan.md` — hypotheses, controlled ablations, settings, and stop/continue criteria.
+4. `reports/literature_review.md` — summarize the papers above, exact methods, reported results, and protocol caveats. Cite paper links and separate published results from our own reproduced results.
+5. `reports/metrics_summary.csv` — all model/feature/label variants, validation mean and standard deviation, and final official test metrics only after model selection.
+6. `reports/predictions_<model>.csv` — one row per engine with true/predicted RUL and errors.
+7. `reports/figures/` — actual-vs-predicted plot, residual plot, per-engine error plot, feature importance/SHAP if appropriate, and ablation chart.
+8. `README.md` — setup, data layout, commands, chosen protocol, metrics, limitations, and reproduction steps.
+9. `reports/final_summary.md` — what improved, what did not, best model by each metric, model chosen and why, known limitations, next steps.
+10. Unit tests for labels, endpoint selection, engine splits, PHM08 score, and consistent prediction/target lengths.
+
+ORDER OF EXECUTION / STOP CONDITIONS
+1. Inspect repo and data; document current implementation.
+2. Audit targets/splits/metrics and add tests.
+3. Reproduce current baseline and exact results.
+4. Tune existing tree models.
+5. Run feature/label ablations.
+6. Implement CNN-LSTM per the 2023 paper in stages.
+7. Compare on validation with repeated engine-level splits/cutoffs.
+8. Select one candidate, then evaluate official test once.
+9. Add anomaly detection, rule-based work orders, MLflow and Streamlit.
+10. Finish documentation and give me a concise experiment summary.
+
+ACCEPTANCE CRITERIA
+- The project runs end-to-end from documented commands.
+- No train/validation engine leakage or future-window leakage.
+- No model is chosen based on repeated official-test tuning.
+- Current baseline results can be reproduced or discrepancies explained.
+- PHM08 score is unit-tested and clearly labeled as sum and mean.
+- All experimental comparisons use the same protocol or clearly mark protocol differences.
+- A model is declared better only when validation evidence supports it; otherwise report inconclusive/tied results.
+- Every chart/table comes from actual run output.
+- All assumptions, thresholds and known limitations are documented.
+
+Start by inspecting the repository and reporting your findings and proposed execution plan before making major changes. Then proceed phase by phase, updating the documentation and tests as you go.

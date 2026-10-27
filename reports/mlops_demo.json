@@ -1,0 +1,101 @@
+{
+  "generated_utc": "2026-10-20T17:19:59.822022+00:00",
+  "scope": "training-only demonstration; official test truth was not used for retraining",
+  "quality_report": {
+    "subset": "FD001",
+    "split": "train",
+    "rows": 20631,
+    "engines": 100,
+    "missing_cells": 0,
+    "nonfinite_cells": 0,
+    "duplicate_unit_cycle": 0,
+    "non_increasing_cycles_sorted": 0,
+    "out_of_order_cycles_in_file": 0,
+    "cycle_gaps": 0,
+    "invalid_unit_or_cycle": 0,
+    "missing_unit_ids_in_range": 0,
+    "cycle_min": 1,
+    "cycle_max": 362,
+    "unit_min": 1,
+    "unit_max": 100
+  },
+  "drift_reference": "descriptive comparison of first 30 versus final 30 observed training cycles per engine; degradation is expected in this simulation and PSI is not a production alarm threshold",
+  "top_drift_features": [
+    {
+      "sensor": "sensor_11",
+      "population_stability_index": 9.203661954987373,
+      "early_mean": 47.356076666666674,
+      "late_mean": 47.96933333333333
+    },
+    {
+      "sensor": "sensor_4",
+      "population_stability_index": 8.067541127238812,
+      "early_mean": 1402.831016666667,
+      "late_mean": 1422.9591133333333
+    },
+    {
+      "sensor": "sensor_12",
+      "population_stability_index": 7.9673917846152005,
+      "early_mean": 521.9048533333333,
+      "late_mean": 520.2776633333333
+    },
+    {
+      "sensor": "sensor_15",
+      "population_stability_index": 7.896689623748098,
+      "early_mean": 8.418381833333335,
+      "late_mean": 8.498076600000001
+    },
+    {
+      "sensor": "sensor_21",
+      "population_stability_index": 7.255698389036484,
+      "early_mean": 23.359172099999995,
+      "late_mean": 23.13115916666667
+    },
+    {
+      "sensor": "sensor_7",
+      "population_stability_index": 7.004316286070492,
+      "early_mean": 553.9476666666667,
+      "late_mean": 552.03414
+    },
+    {
+      "sensor": "sensor_20",
+      "population_stability_index": 6.959575437804708,
+      "early_mean": 38.93225,
+      "late_mean": 38.55524333333333
+    },
+    {
+      "sensor": "sensor_2",
+      "population_stability_index": 5.4842456826873285,
+      "early_mean": 642.3832166666666,
+      "late_mean": 643.3825266666666
+    },
+    {
+      "sensor": "sensor_3",
+      "population_stability_index": 5.076675874929297,
+      "early_mean": 1586.8984766666665,
+      "late_mean": 1598.8071433333332
+    },
+    {
+      "sensor": "sensor_17",
+      "population_stability_index": 4.874516375191585,
+      "early_mean": 392.27,
+      "late_mean": 395.386
+    }
+  ],
+  "retraining_history": [
+    {
+      "version": "v1_train_95_engines",
+      "training_engines": 95,
+      "training_rows": 19552,
+      "artifact": "artifacts\\FD001\\mlops_demo\\v1_train_95_engines",
+      "status": "simulated retraining complete"
+    },
+    {
+      "version": "v2_train_100_engines",
+      "training_engines": 100,
+      "training_rows": 20631,
+      "artifact": "artifacts\\FD001\\mlops_demo\\v2_train_100_engines",
+      "status": "simulated retraining complete"
+    }
+  ]
+}

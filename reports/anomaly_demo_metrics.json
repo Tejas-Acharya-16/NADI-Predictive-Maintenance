@@ -1,0 +1,8 @@
+{
+  "healthy_reference_windows": 1818,
+  "validation_scored_windows": 3713,
+  "threshold_quantile": 0.99,
+  "reconstruction_error_threshold": 0.5716889476776122,
+  "anomaly_rate_validation": 0.3037974683544304,
+  "note": "C-MAPSS has no cycle-level anomaly labels; this is not classification accuracy."
+}

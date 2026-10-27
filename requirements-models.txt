@@ -1,0 +1,10 @@
+# Required for tabular RUL regressors and model evaluation.
+scikit-learn>=1.4
+
+# Optional for MLP, CNN/LSTM, autoencoder, and dynamic quantization experiments.
+# Install separately from https://pytorch.org/ when those experiments are selected.
+# torch>=2.2
+
+# Optional dashboard: pip install streamlit
+# PDF report generation
+reportlab>=4.0

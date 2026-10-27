@@ -1,0 +1,2 @@
+scope,engines,samples,rmse,mae,median_absolute_error,r2,mape_percent,smape_percent,bias_predicted_minus_actual,overprediction_count,underprediction_count,overprediction_fraction,absolute_error_p90,absolute_error_max,phm08_sum,phm08_mean,nasa_score,nasa_score_mean
+all_FD001_to_FD004_test_engines,707,707,28.73712677684187,18.00573788198837,8.443864015962419,0.6833973244398569,18.958561682893848,20.544635753760552,-13.564224416433584,251,456,0.355021216407355,53.477760852938715,98.01492266266855,32135.810159632343,45.45376260202595,32135.810159632343,45.45376260202595

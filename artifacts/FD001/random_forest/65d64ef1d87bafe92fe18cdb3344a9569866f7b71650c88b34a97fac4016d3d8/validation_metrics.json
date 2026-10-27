@@ -1,0 +1,76 @@
+{
+  "cycle_level": {
+    "bias_predicted_minus_actual": -3.1996262104483466,
+    "mae": 25.67957566485419,
+    "mape_percent": 26.162734780303214,
+    "median_absolute_error": 15.908333333333339,
+    "nasa_score": 20749651.710902568,
+    "nasa_score_mean": 5069.545983606784,
+    "overprediction_count": 2057,
+    "r2": 0.6963034560445412,
+    "rmse": 37.03775540361779,
+    "samples": 4093,
+    "smape_percent": 24.994309712129432,
+    "underprediction_count": 2035
+  },
+  "cycle_validation_rows": 4093,
+  "right_censored_endpoints": [
+    {
+      "bias_predicted_minus_actual": 11.924029761904764,
+      "fraction": 0.5,
+      "mae": 33.145958333333326,
+      "mape_percent": 35.93183108019692,
+      "median_absolute_error": 31.359999999999985,
+      "nasa_score": 7351.714118378815,
+      "nasa_score_mean": 367.5857059189408,
+      "overprediction_count": 13,
+      "r2": -2.222432803497833,
+      "rmse": 40.01090341956413,
+      "samples": 20,
+      "smape_percent": 30.67940738753851,
+      "underprediction_count": 7
+    },
+    {
+      "bias_predicted_minus_actual": 8.675184523809524,
+      "fraction": 0.7,
+      "mae": 18.53327976190476,
+      "mape_percent": 33.845549986407924,
+      "median_absolute_error": 17.58380952380952,
+      "nasa_score": 312.8237889574283,
+      "nasa_score_mean": 15.641189447871415,
+      "overprediction_count": 11,
+      "r2": -1.8575942502975988,
+      "rmse": 22.56850901528597,
+      "samples": 20,
+      "smape_percent": 27.905506893469116,
+      "underprediction_count": 9
+    },
+    {
+      "bias_predicted_minus_actual": 0.1582738095238092,
+      "fraction": 0.9,
+      "mae": 3.6049404761904755,
+      "mape_percent": 16.769965866201513,
+      "median_absolute_error": 1.3183333333333351,
+      "nasa_score": 9.679765801720963,
+      "nasa_score_mean": 0.48398829008604816,
+      "overprediction_count": 11,
+      "r2": -0.4445474056632621,
+      "rmse": 5.427183579120381,
+      "samples": 20,
+      "smape_percent": 16.8160577482792,
+      "underprediction_count": 9
+    }
+  ],
+  "selected_feature_count": 8,
+  "selected_features": [
+    "cycle",
+    "cycles_seen",
+    "sensor_3_mean_20",
+    "sensor_11_slope_20",
+    "sensor_4_mean_5",
+    "sensor_2_mean_20",
+    "sensor_14_mean_20",
+    "sensor_11_mean_5"
+  ],
+  "validation_engines": 20
+}

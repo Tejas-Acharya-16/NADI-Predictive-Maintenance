@@ -1,0 +1,89 @@
+{
+  "artifact_file": "model.pt",
+  "artifact_sha256": "cd4bbffc3b6c42d00b422856dddc1978b06ae2e613552ed1ffab56787355fa3d",
+  "created_at_utc": "2026-10-20T15:01:34.916215+00:00",
+  "identity": {
+    "config": {
+      "aficv_threshold": null,
+      "endpoint_fractions": [
+        0.5,
+        0.7,
+        0.9
+      ],
+      "feature_mode": "raw",
+      "model_name": "autoencoder",
+      "model_params": {
+        "batch_size": 256,
+        "bottleneck_size": 8,
+        "early_fraction": 0.2,
+        "epochs": 30,
+        "hidden_size": 32,
+        "learning_rate": 0.001,
+        "window_size": 20
+      },
+      "rolling_windows": [
+        5,
+        20
+      ],
+      "rul_cap": null,
+      "seed": 42,
+      "subset": "FD001",
+      "validation_fraction": 0.2
+    },
+    "feature_columns": [
+      "cycle",
+      "setting_1",
+      "setting_2",
+      "setting_3",
+      "sensor_1",
+      "sensor_2",
+      "sensor_3",
+      "sensor_4",
+      "sensor_5",
+      "sensor_6",
+      "sensor_7",
+      "sensor_8",
+      "sensor_9",
+      "sensor_10",
+      "sensor_11",
+      "sensor_12",
+      "sensor_13",
+      "sensor_14",
+      "sensor_15",
+      "sensor_16",
+      "sensor_17",
+      "sensor_18",
+      "sensor_19",
+      "sensor_20",
+      "sensor_21"
+    ],
+    "software_versions": {
+      "joblib": "1.6.0",
+      "numpy": "1.26.4",
+      "pandas": "3.0.6",
+      "python": "3.12.4",
+      "scikit-learn": "1.9.1",
+      "torch": "2.14.1+cpu"
+    },
+    "split_sha256": "9e8523dbc7ab49706a82f3d4cd6797e27e9e01b1fd47f25b56050b65bd9c453d",
+    "training_data_sha256": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8"
+  },
+  "model_name": "autoencoder",
+  "software_versions": {
+    "joblib": "1.6.0",
+    "numpy": "1.26.4",
+    "pandas": "3.0.6",
+    "python": "3.12.4",
+    "scikit-learn": "1.9.1",
+    "torch": "2.14.1+cpu"
+  },
+  "validation_metrics": {
+    "development_early_life_windows": 1818,
+    "interpretation": "Unsupervised health signal only; C-MAPSS has no cycle-level anomaly labels.",
+    "spearman_reconstruction_error_vs_rul": -0.5163175619035717,
+    "validation_reconstruction_mse_mean": 0.41242703795433044,
+    "validation_reconstruction_mse_median": 0.3520824611186981,
+    "validation_reconstruction_mse_std": 0.2041366547346115,
+    "validation_scored_windows": 3713
+  }
+}

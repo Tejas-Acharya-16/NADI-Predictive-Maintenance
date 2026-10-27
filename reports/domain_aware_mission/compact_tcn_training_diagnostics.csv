@@ -1,0 +1,4 @@
+fold,train_sequences,validation_endpoints,epochs_completed,validation_scaled_mse
+1,8005,1422,12,0.4301982820034027
+2,7961,1416,12,0.5370397567749023
+3,7966,1416,8,0.49687501788139343

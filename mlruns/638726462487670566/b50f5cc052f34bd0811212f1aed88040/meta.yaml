@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/devan/Downloads/casestudy1sol/mlruns/638726462487670566/b50f5cc052f34bd0811212f1aed88040/artifacts
+end_time: 1792527132376
+entry_point_name: ''
+experiment_id: '638726462487670566'
+lifecycle_stage: active
+run_id: b50f5cc052f34bd0811212f1aed88040
+run_name: competition_system_global_hgb_cap200
+run_uuid: b50f5cc052f34bd0811212f1aed88040
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1792527132113
+status: 3
+tags: []
+user_id: devan

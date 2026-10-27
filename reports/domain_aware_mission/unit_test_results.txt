@@ -1,0 +1,32 @@
+test_condition_normalizer_is_fitted_on_source_rows (test_feature_and_triage.FeatureVariantTests.test_condition_normalizer_is_fitted_on_source_rows) ... ok
+test_cycle_free_variant_drops_both_time_features (test_feature_and_triage.FeatureVariantTests.test_cycle_free_variant_drops_both_time_features) ... ok
+test_initial_difference_features_do_not_use_future_values (test_feature_and_triage.FeatureVariantTests.test_initial_difference_features_do_not_use_future_values) ... ok
+test_low_variance_screen_is_fit_on_training_only (test_feature_and_triage.FeatureVariantTests.test_low_variance_screen_is_fit_on_training_only) ... ok
+test_bad_quality_requires_human_review (test_feature_and_triage.TriageTests.test_bad_quality_requires_human_review) ... ok
+test_replay_does_not_duplicate_a_work_order (test_feature_and_triage.TriageTests.test_replay_does_not_duplicate_a_work_order) ... ok
+test_aficv_uses_grouped_development_folds (test_model_training.TrainingCommonTests.test_aficv_uses_grouped_development_folds) ... ok
+test_causal_features_do_not_use_future_readings (test_model_training.TrainingCommonTests.test_causal_features_do_not_use_future_readings) ... ok
+test_manifest_rejects_incompatible_run_identity (test_model_training.TrainingCommonTests.test_manifest_rejects_incompatible_run_identity) ... ok
+test_nasa_score_penalizes_overprediction_more (test_model_training.TrainingCommonTests.test_nasa_score_penalizes_overprediction_more) ... C:\Users\devan\Downloads\casestudy1sol\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1295: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.
+  warnings.warn(msg, UndefinedMetricWarning)
+C:\Users\devan\Downloads\casestudy1sol\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1295: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.
+  warnings.warn(msg, UndefinedMetricWarning)
+ok
+test_optional_torch_error_is_actionable (test_model_training.TrainingCommonTests.test_optional_torch_error_is_actionable) ... ok
+test_phm08_manual_reference_values (test_model_training.TrainingCommonTests.test_phm08_manual_reference_values) ... ok
+test_right_censored_endpoint_targets_are_known_remaining_cycles (test_model_training.TrainingCommonTests.test_right_censored_endpoint_targets_are_known_remaining_cycles) ... C:\Users\devan\Downloads\casestudy1sol\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1295: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.
+  warnings.warn(msg, UndefinedMetricWarning)
+C:\Users\devan\Downloads\casestudy1sol\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1295: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.
+  warnings.warn(msg, UndefinedMetricWarning)
+ok
+test_sequence_windows_keep_engines_separate_and_labels_at_endpoint (test_model_training.TrainingCommonTests.test_sequence_windows_keep_engines_separate_and_labels_at_endpoint) ... ok
+test_tabular_candidates_fit_and_predict (test_model_training.TrainingCommonTests.test_tabular_candidates_fit_and_predict) ... ok
+test_fd001_runner_persists_and_reuses_without_test_files (test_model_training.TrainingRunnerTests.test_fd001_runner_persists_and_reuses_without_test_files) ... ok
+test_missing_torch_is_detected_before_training_any_selected_model (test_model_training.TrainingRunnerTests.test_missing_torch_is_detected_before_training_any_selected_model) ... skipped 'PyTorch is installed; optional-dependency preflight is not applicable.'
+test_official_test_evaluation_uses_only_endpoint_labels (test_model_training.TrainingRunnerTests.test_official_test_evaluation_uses_only_endpoint_labels) ... ok
+test_full_range_endpoints_are_causal_and_keep_engines_together (test_next_experiment_utils.NextExperimentUtilityTests.test_full_range_endpoints_are_causal_and_keep_engines_together) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 13.216s
+
+OK (skipped=1)

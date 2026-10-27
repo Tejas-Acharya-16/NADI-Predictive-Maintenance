@@ -1,0 +1,31 @@
+{
+  "timestamp_utc": "2026-10-20T18:47:36.601526+00:00",
+  "candidate": {
+    "name": "hgb_cap100_w10_30",
+    "family": "hist_gradient_boosting",
+    "rul_cap": 100,
+    "windows": [
+      10,
+      30
+    ],
+    "initial_differences": false,
+    "low_variance_threshold": null,
+    "include_absolute_cycle": true,
+    "model_params": {
+      "max_iter": 180,
+      "learning_rate": 0.08,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 20,
+      "l2_regularization": 1.0,
+      "early_stopping": false
+    }
+  },
+  "software_versions": {
+    "python": "3.12.4",
+    "numpy": "1.26.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "selection_protocol": "validation only; official test not loaded"
+}

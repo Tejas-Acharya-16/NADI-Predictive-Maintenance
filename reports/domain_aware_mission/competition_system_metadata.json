@@ -1,0 +1,9 @@
+{
+  "pipeline": "Sensor data -> training-fitted preprocessing -> operating condition identification -> RUL prediction -> normal-reference anomaly score -> deterministic triage -> mock work order -> local MLflow",
+  "anomaly_note": "C-MAPSS has no valid anomaly ground truth; scores are reconstruction errors, not supervised anomaly classes.",
+  "anomaly_method": "pca_reconstruction_fallback_optional_torch_unavailable",
+  "anomaly_threshold": 0.9785360097885132,
+  "reference_windows": 12000,
+  "stream_windows": 2109,
+  "work_orders": 228
+}
